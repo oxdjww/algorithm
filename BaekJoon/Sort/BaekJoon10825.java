@@ -86,3 +86,7 @@ public class BaekJoon10825 {
         }
     }
 }
+
+/*문제를 딱 보자마자 student를 객체화해야 한다는 감이 왔고, 그나마 나에게 객체지향프로그래밍을 하기 편한 언어인 java를 선택하게 되었다.
+student 클래스에서 compareTo를 구현하면 쉽게 비교를 할 수 있고, Collenctions를 통해 편하게 정렬하여 출력해주었다!
+ */
