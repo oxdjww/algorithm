@@ -1,5 +1,4 @@
 /*
-BOJ 2447 º° Âï±â 
 https://www.acmicpc.net/problem/2447
 */
 #include <bits/stdc++.h>
