@@ -24,11 +24,13 @@ int main(void)
     int dist = 0;
     for (int i = 0; i < n; i++)
     {
+        printf("dist : %d\n",dist);
         idx = idx + dist;
         if (idx > n-1)
             idx -= n;
-        else if (idx < 0)
+        if (idx < 0)
             idx += n;
+        printf("idx : %d\n",idx);
         dist = data[idx];
         data[idx] = 0;
         
@@ -36,7 +38,9 @@ int main(void)
         {   
             if (flag)
             {
+                printf("visit\n");
                 idx++;
+                dist = data[idx];
                 data[idx] = 0;
                 if (idx < 0)
                 {
@@ -44,23 +48,24 @@ int main(void)
                 }
                 if (idx > n-1)
                 {
-                    idx -= n;
+                    idx = idx % n;
                 }
-                dist = data[idx];
+                printf("real idx : %d\n",idx);
+                printf("real dist : %d\n",dist);
             }
             else
             {
                 idx--;
+                dist = data[idx];
                 data[idx] = 0;
                 if (idx < 0)
                 {
-                    idx += 5;
+                    idx += n;
                 }
-                if (idx > 4)
+                if (idx > n-1)
                 {
-                    idx -= 5;
+                    idx = idx % n;
                 }
-                dist = data[idx];
             }
         }
         ans.push_back(idx + 1);
@@ -68,6 +73,11 @@ int main(void)
                 flag = 1;
         if (dist < 0)
                 flag = 0;
+        for(int t = 0 ; t < n ; t++)
+        {
+            printf("%d ",data[t]);
+        }
+        printf("\n");
     }
     for (int i = 0; i < n; i++)
     {
